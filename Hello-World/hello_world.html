@@ -1,0 +1,26 @@
+<!Doctype html>
+<html>
+<head>
+<script>
+function head_script() {
+	alert("Script in head, This is the standard place to put scripts.");
+}
+</script>
+</head>
+<body>
+<h1>Hello world!</h1>
+<div>Trying to learn VIM</div>
+<div> This should (hopefully) improve my efficiency when coding.</div>  
+<div>Once I know VIM I would like to make games using HTML 5</div>
+<button type="button" onclick="head_script()">Script from head</button>
+<button type="button" onclick="body_script()">Script from body</button>
+<button type="button" onclick="file_script()">Script from file</button>
+<script>
+function body_script() {
+	alert("Script at end of body. This is more efficient as the script loads after the content.");
+}
+</script>
+<script src = "hello.js">
+</script>
+</body>
+</html>
