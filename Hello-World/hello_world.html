@@ -1,27 +1,44 @@
 <!Doctype html>
 <html>
-<head>
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<script>
-function head_script() {
-	alert("Script in head, This is the standard place to put scripts.");
-}
-</script>
-</head>
-<body>
-<h1>Hello world!</h1>
-<div>Trying to learn VIM</div>
-<div> This should (hopefully) improve my efficiency when coding.</div>  
-<div>Once I know VIM I would like to make games using HTML 5</div>
-<button type="button" onclick="head_script()">Script from head</button>
-<button type="button" onclick="body_script()">Script from body</button>
-<button type="button" onclick="file_script()">Script from file</button>
-<script>
-function body_script() {
-	alert("Script at end of body. This is more efficient as the script loads after the content.");
-}
-</script>
-<script src = "scripts/hello.js">
-</script>
-</body>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script>
+            function draw_rectangle() {
+                var c = document.getElementById("myCanvas");
+                var ctx = c.getContext("2d");
+                ctx.clearRect(0,0,c.width, c.height);
+                ctx.fillStyle = "FF0000";
+                ctx.fillRect(25,25,150,75);
+            }
+        </script>
+    </head>
+    <body>
+        <h1 id="myHeader">Hello world!</h1>
+        <p>Trying to learn VIM</p>
+        <p> This should (hopefully) improve my efficiency when coding.</p>  
+        <p>Once I know VIM I would like to make games using HTML 5</p>
+        <div>
+            <button type="button" onclick="draw_rectangle()">Draw rectangle</button>
+            <button type="button" onclick="draw_circle()">Draw circle</button>
+            <button type="button" onclick="file_script()">Script from file</button>
+        </div>
+        <hr>
+        <div>
+            <canvas id="myCanvas" width="200" height="150">
+
+            </canvas>
+        </div>
+        <script>
+            function draw_circle() {
+                var c = document.getElementById("myCanvas");
+                var ctx = c.getContext("2d");
+                ctx.clearRect(0,0,c.width, c.height);
+                ctx.beginPath();
+                ctx.arc(95, 50, 40, 0, 2*Math.PI);
+                ctx.stroke();
+            }
+        </script>
+        <script src = "scripts/hello.js">
+        </script>
+    </body>
 </html>
